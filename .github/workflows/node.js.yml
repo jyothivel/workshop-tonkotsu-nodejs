@@ -10,7 +10,7 @@ on:
     branches: [ master ]
 
 jobs:
-  build-and-deploy:
+  build:
 
     runs-on: ubuntu-latest
 
@@ -26,10 +26,4 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
     - run: npm run build --if-present
-    - run: npm test
-      
-    - name: 'Run Azure webapp deploy action using publish profile credentials'
-      uses: azure/webapps-deploy@v2
-      with: 
-        app-name: github-workshop
-        publish-profile: ${{ secrets.azureWebAppPublishProfile }}    
+    - run: npm test   
