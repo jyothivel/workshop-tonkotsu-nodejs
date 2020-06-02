@@ -29,4 +29,4 @@ jobs:
       uses: azure/webapps-deploy@v2
       with: 
         app-name: github-workshop
-        publish-profile: ${{ secrets.azureWebAppPublishProfile }}
+        publish-profile: ${{ secrets.azureWebAppPublishProfileDev }}
